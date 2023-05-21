@@ -1,0 +1,25 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "First Web Application Made using ExpressJs, NodeJS and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "todolist",
+    "html",
+    "css",
+    "bootstrap",
+    "javascript",
+    "expressjs",
+    "nodejs",
+    "mongodb",
+    "mongoose"
+  ],
+  "author": "ShreyasIngale",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
