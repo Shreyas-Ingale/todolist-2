@@ -1,3 +1,4 @@
+//Deafult schema for database Todolist
 const mongoose = require('mongoose');
 
 const todolistSchema = new mongoose.Schema({

@@ -1,6 +1,7 @@
+// accessing the database
 const db = require('../config/mongoose');
 const Todolist = require('../models/todolist');
-
+// main controller action for redering home page
 module.exports.main = function (req, res) {
     Todolist.find({}).then(function (todolist) {
         return res.render('main', {
@@ -16,6 +17,7 @@ module.exports.main = function (req, res) {
     });
 }
 
+// controller action for creating new tasks
 module.exports.create = function (req, res) {
     let cat = '', duedate = 'No Deadline';
     if(req.body.category !== 'Choose a Category'){
@@ -38,6 +40,7 @@ module.exports.create = function (req, res) {
     });
 }
 
+// controller action for deleting selected tasks
 module.exports.delete = function (req, res) {
     let id = req.query;
     var count = Object.keys(id).length;

@@ -60,6 +60,17 @@ body {
     color: #737373; /* theme-font */
 }
 
+/* Global Style */
+label{
+    color: #505050 !important;
+}
+
+option{
+    background-color: inherit;
+    color: inherit;
+}
+
+/* Main Container */
 .container {
     padding: 5px 0px 10px;
     margin-top: 2.5vh;
@@ -70,6 +81,7 @@ body {
     box-shadow: 0 0 10px 2px rgba(123, 123, 123, 0.4);
 }
 
+/* Description */
 .description-holder {
     margin: -8px 0 0 !important;
     
@@ -77,10 +89,6 @@ body {
 
 .description-holder:focus-within{
     background-color: rgba(176, 196, 222, 0.756) !important;
-}
-
-label{
-    color: #505050 !important;
 }
 
 form #description{
@@ -96,6 +104,7 @@ form #description::placeholder {
     color: #7373739a !important;
 }
 
+/* Category */
 .category-selector {
     width: 50% !important;
 }
@@ -117,6 +126,7 @@ form #description::placeholder {
     background-color: rgba(176, 196, 222, 0) !important;
 }
 
+/* Specific Colors for different categories */
 .Personal {
     background-color: #005fbe;
 }
@@ -127,11 +137,7 @@ form #description::placeholder {
     background-color: #f0ad4e;
 }
 
-option{
-    background-color: inherit;
-    color: inherit;
-}
-
+/* Duedate */
 .duedate-selector:focus-within{
     background-color: rgba(176, 196, 222, 0.756) !important;
 }
@@ -149,6 +155,17 @@ option{
     background-color: rgba(176, 196, 222, 0) !important;
 }
 
+/* buttons */
+.add-btn {
+    top: 39.2% !important;
+    right: 51% !important;
+}
+
+.del-btn {
+    left: 52% !important;
+}
+
+/* Task List and Indivisual List Items */
 .task-category-holder {
     position: absolute; 
     right: 5% !important;
@@ -175,14 +192,5 @@ option{
 .tasklist-item input:checked ~ div .task,
 .tasklist-item input:checked ~ div .task-duedate {
     text-decoration: line-through !important;
-}
-
-.add-btn {
-    top: 39.2% !important;
-    right: 51% !important;
-}
-
-.del-btn {
-    left: 52% !important;
 }
 
