@@ -3,7 +3,6 @@ const app = express();
 const port = 8000;
 const bodyParser = require('body-parser');
 const db = require('./config/mongoose');
-const Todolist = require('./models/todolist');
 
 app.set('view engine', 'ejs');
 app.set('views', './views');

@@ -1,0 +1,188 @@
+/* importing Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* For Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background: #ebebeb;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #bbb;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+/* styling for text selected/highlighted */
+::selection {
+    color: #e3e3e3 !important;
+    background-color: #666666 !important;
+}
+
+/* default click style to buttons */
+.btn-animation {
+    transition: all 0.25s ease-in-out !important; 
+    transform-origin: center;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.btn-animation:active {
+    transform: scale(0.9); 
+}
+
+/* styling different elements */
+
+/* overall style with theme styling */
+body {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100vh;
+    background-color: rgb(87, 108, 136); /* theme-background */
+    color: #737373; /* theme-font */
+}
+
+.container {
+    padding: 5px 0px 10px;
+    margin-top: 2.5vh;
+    min-width: 55vw;
+    max-width: 55vw;
+    max-height: 95vh;
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 0 10px 2px rgba(123, 123, 123, 0.4);
+}
+
+.description-holder {
+    margin: -8px 0 0 !important;
+    
+}
+
+.description-holder:focus-within{
+    background-color: rgba(176, 196, 222, 0.756) !important;
+}
+
+label{
+    color: #505050 !important;
+}
+
+form #description{
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: rgba(176, 196, 222, 0);
+    padding-left: 0 !important;
+    color: #505050dc !important;
+}
+
+form #description::placeholder {
+    color: #7373739a !important;
+}
+
+.category-selector {
+    width: 50% !important;
+}
+
+.category-selector:focus-within{
+    background-color: rgba(176, 196, 222, 0.756) !important;
+}
+
+#category {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding-left: 0 !important;
+    background-color: inherit !important;
+    color: #505050dc !important;
+}
+
+#category:focus {
+    background-color: rgba(176, 196, 222, 0) !important;
+}
+
+.Personal {
+    background-color: #005fbe;
+}
+.Work {
+    background-color: #017f01;
+}
+.Other {
+    background-color: #f0ad4e;
+}
+
+option{
+    background-color: inherit;
+    color: inherit;
+}
+
+.duedate-selector:focus-within{
+    background-color: rgba(176, 196, 222, 0.756) !important;
+}
+
+#duedate {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding-left: 0 !important;
+    background-color: inherit !important;
+    color: #505050dc !important;
+}
+
+#duedate:focus {
+    background-color: rgba(176, 196, 222, 0) !important;
+}
+
+.task-category-holder {
+    position: absolute; 
+    right: 5% !important;
+}
+
+.task-list{
+    min-height: 15vh !important;
+    max-height: 41vh !important;
+}
+
+.tasklist-item {
+    padding-top: 10px !important;
+}
+
+.task{
+    word-break: break-all !important;
+    padding-right: 130px !important;
+}
+
+.task-category-holder {
+    cursor: default;
+}
+
+.tasklist-item input:checked ~ div .task,
+.tasklist-item input:checked ~ div .task-duedate {
+    text-decoration: line-through !important;
+}
+
+.add-btn {
+    top: 39.2% !important;
+    right: 51% !important;
+}
+
+.del-btn {
+    left: 52% !important;
+}
+

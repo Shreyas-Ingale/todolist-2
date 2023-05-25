@@ -1,12 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="shortcut icon" href="/image/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="https://kit.fontawesome.com/78c7334a1b.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script defer src="/js/main.js" type="text/javascript"></script>
 </head>
-<body>
-    
+
+<body class="d-flex align-items-start justify-content-center position-relative">
+    <div class="container d-flex flex-column align-items-center justify-content-center">
+        <header class="my-2 w-100 border-bottom border-secondary border-1 text-center ">
+            <h1>TODO App</h1>
+        </header>
+
+        <form action="/create-task" method="post" class="d-flex flex-column align-items-start w-100 p-0 m-0">
+            <div class="description-holder w-100 ps-3 mb-1 border-bottom border-secondary border-1">
+                <label for="description" class="form-label">Description</label>
+                <input class="form-control" id="description" name="description" type="text"
+                    placeholder="Add a task you want to do..." aria-label="default input example" required>
+            </div>
+            <div class="extra-details w-100 p-0 mb-2 d-flex justify-content-center border-bottom border-secondary border-1">
+                <div
+                    class="dropdown ps-3 pb-2 category-selector d-flex flex-column border-end border-secondary border-1">
+                    <label for="category" class="form-label">Category</label>
+                    <select id="category" class="form-select" name="category" aria-label="Default select example">
+                        <option selected>Choose a Category</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="duedate-selector w-50 ps-3 d-flex flex-column align-items-start">
+                    <label for="duedate" class="form-label">Due Date</label>
+                    <input type="date" name="duedate" id="duedate" class="form-control">
+                </div>
+            </div>
+            <button type="submit"
+                class="p-1 pe-2 btn btn-lg btn-outline-secondary btn-animation position-absolute add-btn"><i
+                    class="px-1 fa-solid fa-plus"></i>Add Task</button>
+        </form>
+
+        <form action="/delete-task" method="get" class="w-100">
+            <button type="submit"
+                class="p-1 pe-2 btn btn-lg btn-outline-danger btn-animation position-relative del-btn"><i
+                    class="px-1 fa-solid fa-trash-can"></i>Delete Tasks</button>
+            <ul class="task-list w-100 mt-3 d-flex flex-column overflow-auto h-100">
+                <% for(let i of todolist) { %>
+                    <li
+                        class="tasklist-item ps-4 me-4 my-1 d-flex align-items-center position-relative border-top border-secondary">
+                        <input class="me-3 form-check" type="checkbox" name="<%= i._id %>" id="checkbox" value="">
+                        <div>
+                            <h6 class="task ps-1"><%= i.description %></h6>
+                            <p><i class="px-1 fa-solid fa-calendar-days"></i><span class="small task-duedate"><%= i.duedate %></span>
+                            </p>
+                        </div>
+                        <div class="task-category-holder end-100">
+                            <h6><span class="task-category badge <%= i.category %> p-2 fs-6 fw-semibold"><%= i.category %></span></h6>
+                        </div>
+                    </li>
+                <% } %>
+            </ul>
+        </form>
+
+        <footer>
+            <span>Total Tasks : <span class="task-number"><%= taskNumber %></span></span>
+        </footer>
+    </div>
 </body>
+
 </html>

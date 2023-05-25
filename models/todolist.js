@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const todolistSchema = new mongoose.Schema({
-    name: {
+    description: {
         type: String,
         required: true
     },
@@ -9,8 +9,8 @@ const todolistSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    dueDate: {
-        type: Date,
+    duedate: {
+        type: String,
         required: false
     }
 });
